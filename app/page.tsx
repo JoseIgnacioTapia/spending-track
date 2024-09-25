@@ -1,3 +1,4 @@
+import AddTransaction from '@/components/AddTransaction';
 import Guest from '@/components/Guest';
 import { currentUser } from '@clerk/nextjs/server';
 
@@ -9,8 +10,9 @@ async function HomePage() {
   }
 
   return (
-    <main>
+    <main className='container'>
       <h1>Welcome, {user.firstName}</h1>
+      <AddTransaction />
     </main>
   );
 }
