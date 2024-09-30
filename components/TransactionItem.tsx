@@ -1,6 +1,8 @@
+'use client'
 import { Transaction } from '@/types/Transaction';
 import { addCommas } from '@/lib/utils';
 import { toast } from 'react-toastify';
+import deleteTransaction from '@/app/actions/deleteTransaction';
 
 function TransactionItem({ transaction }: { transaction: Transaction }) {
   const sign = transaction.amount < 0 ? '-' : '+';
@@ -12,9 +14,14 @@ function TransactionItem({ transaction }: { transaction: Transaction }) {
 
     if (!confirmed) return;
 
-    await deleteTransaction(transactionId);
+    const { message, error } = await deleteTransaction(transactionId);
 
-    toast.success('Transaction deleted');
+    if (error) {
+      toast.error(error);
+      return;
+    }
+
+    toast.success(message);
   };
 
   return (
