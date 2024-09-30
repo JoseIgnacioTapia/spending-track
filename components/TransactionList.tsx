@@ -10,7 +10,7 @@ async function TransactionList() {
   }
 
   return (
-    <>
+    <div>
       <h3>History</h3>
       <ul className='list'>
         {transactions &&
@@ -18,7 +18,7 @@ async function TransactionList() {
             <TransactionItem key={transaction.id} transaction={transaction} />
           ))}
       </ul>
-    </>
+    </div>
   );
 }
 

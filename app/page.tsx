@@ -13,12 +13,19 @@ async function HomePage() {
   }
 
   return (
-    <main className='container'>
+    <main className='container mx-auto px-4'>
       <h2>Welcome, {user.firstName}</h2>
-      <Balance />
-      <IncomeExpense />
-      <AddTransaction />
-      <TransactionList />
+      <div className='sections'>
+        <div>
+          <Balance />
+          <IncomeExpense />
+          <AddTransaction />
+        </div>
+
+        <div>
+          <TransactionList />
+        </div>
+      </div>
     </main>
   );
 }

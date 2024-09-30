@@ -16,10 +16,10 @@ body {
 .container {
   margin: 30px auto;
   width: 350px;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .navbar {
@@ -83,6 +83,13 @@ h4 {
   background: red;
   color: #fff;
   padding: 3px;
+}
+
+.sections {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
 }
 
 .inc-exp-container {
